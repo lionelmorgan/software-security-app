@@ -1,5 +1,9 @@
 const { Pool } = require('pg');
 
+/* 
+Update database parameters below using environment variables 
+*/
+
 const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
