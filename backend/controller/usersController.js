@@ -18,8 +18,8 @@ const getUserById = (req, res) => {
 const createUser = async (req, res) => {
   const newUser = req.body;
   try {
-    const user = await usersService.createUser(newUser);
-    res.status(201).json(user);
+    const { user, token } = await usersService.createUser(newUser); // Get user and token from service
+    res.status(201).json({ user, token }); // Return user and token in response
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
